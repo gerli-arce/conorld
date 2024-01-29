@@ -6,24 +6,29 @@ import Hero from "../components/starter/hero/hero";
 import Infobox from "../components/starter/infobox/infobox";
 import Starter from "../components/starter/next-steps/next-steps";
 
+import Login from "../components/login";
+
+
 export default component$(() => {
   return (
     <>
-      <Hero />
-      <Starter />
+    <Login />
+    
+      {/* <Hero /> */}
+      {/* <Starter /> */}
 
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
+      {/* <div role="presentation" class="ellipsis"></div>
+      <div role="presentation" class="ellipsis ellipsis-purple"></div> */}
 
-      <div class="container container-center container-spacing-xl">
+      {/* <div class="container container-center container-spacing-xl">
         <h3>
           You can <span class="highlight">count</span>
           <br /> on me
         </h3>
         <Counter />
-      </div>
+      </div> */}
 
-      <div class="container container-flex">
+      {/* <div class="container container-flex">
         <Infobox>
           <div q:slot="title" class="icon icon-cli">
             CLI Commands
@@ -96,17 +101,17 @@ export default component$(() => {
             </ul>
           </Infobox>
         </div>
-      </div>
+      </div> */}
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Bienvendo a Conorld",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "Una empresa echa para el creciemiento de tu negocio",
     },
   ],
 };
