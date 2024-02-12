@@ -71,9 +71,9 @@ function Header() {
 			<div className="brand">
 				<Link to="/" className="brand-logo">
 					<span className="brand-img">
-						<span className="brand-img-text text-theme">H</span>
+						<span className="brand-img-text text-theme">C</span>
 					</span>
-					<span className="brand-text">HUD ADMIN</span>
+					<span className="brand-text">CONNECT WORLD</span>
 				</Link>
 			</div>
 			
@@ -173,7 +173,7 @@ function Header() {
 						<div className="menu-img online">
 							<img src="/assets/img/user/profile.jpg" alt="Profile" height="60" />
 						</div>
-						<div className="menu-text d-sm-block d-none w-170px">username@account.com</div>
+						<div className="menu-text d-sm-block d-none w-170px">yopirata</div>
 					</a>
 					<div className="dropdown-menu dropdown-menu-end me-lg-3 fs-11px mt-1">
 						<Link to="/profile" className="dropdown-item d-flex align-items-center">PROFILE <i className="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></Link>
