@@ -1,10 +1,13 @@
 
 import { AppSettings } from "./config/app-settings.js";
 import { useApp } from "./hooks/useApp.js";
+import { useSessionLogin } from "./hooks/useSession.js";
 import { useLayoutEffect } from "react";
 import { RoutesApp } from "./routes/RoutesApp.jsx";
 
 function App() {
+
+  const { login, handlerLogin } = useSessionLogin();
   const {
     providerValue,
     appHeaderNone,
@@ -18,7 +21,6 @@ function App() {
     appTopNav,
   } = useApp();
 
-  // const { login, handlerLogin } = useLayoutEffect();
   return (
     <AppSettings.Provider value={providerValue}>
       <div

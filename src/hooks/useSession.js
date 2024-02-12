@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { loginSession } from "../services/login/loginSession";
 
-const useLayout = ()=>{
+export const useSessionLogin = ()=>{
 
     const initialLogin ={
         username: null,
@@ -11,7 +12,7 @@ const useLayout = ()=>{
 
     const handlerLogin = ({username, password})=>{
         if(loginSession({username, password})){
-            setLogin({ ...session, username,  password})
+            setLogin({ ...login, username,  password})
         }
     }
 
