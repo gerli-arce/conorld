@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import jsVectorMap from 'jsvectormap';
 import 'jsvectormap/dist/maps/world.js';
 import 'jsvectormap/dist/css/jsvectormap.min.css';
-import { Card, CardBody, CardExpandToggler } from '../../../components/lte/card/card.jsx';
+import { Card, CardBody, CardExpandToggler } from '../../components/lte/card/card.jsx';
 import Chart from 'react-apexcharts';
 
-function DashboardPage() {
+function Dashboard() {
 	
 	function randomNo() {
 		return Math.floor(Math.random() * 60) + 30
@@ -385,4 +385,4 @@ function DashboardPage() {
 	)
 };
 
-export default DashboardPage;
+export default Dashboard;

@@ -121,10 +121,10 @@ function Login() {
         <div className="toast fade hide" data-autohide="true" id="toast-1">
           <div className="toast-header">
             <i className="far fa-bell text-muted me-2"></i>
-            <strong class="me-auto">Bootstrap</strong>
+            <strong className="me-auto">Bootstrap</strong>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="toast"
             ></button>
           </div>

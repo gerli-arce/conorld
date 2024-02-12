@@ -2,7 +2,7 @@ import React from "react";
 import App from "./../app.jsx";
 import { Navigate } from "react-router-dom";
 
-import Dashboard from "./../pages/lte/dashboard/dashboard.js";
+import DashboardPage from "./../pages/lte/dashboard/dashboard.js";
 import Analytics from "./../pages/lte/analytics/analytics.js";
 import EmailInbox from "./../pages/lte/email/inbox.js";
 import EmailCompose from "./../pages/lte/email/compose.js";
@@ -58,6 +58,7 @@ import Settings from "./../pages/lte/settings/settings.js";
 import Helper from "./../pages/lte/helper/helper.js";
 
 import Login from "../pages/login/login.jsx";
+import Dashboard from "../pages/dashboard/dashboard.js";
 
 const AppRoute = [
   {
@@ -66,7 +67,8 @@ const AppRoute = [
     children: [
       { path: "", element: <Navigate to="login" /> },
       { path: "login", element: <Login /> },
-      { path: "lte/dashboard", element: <Dashboard /> },
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "lte/dashboard", element: <DashboardPage /> },
       { path: "lte/analytics", element: <Analytics /> },
       {
         path: "lte/email/*",

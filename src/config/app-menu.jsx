@@ -1,6 +1,7 @@
 const Menu = [
 	{ is_header: true, title: 'Navegación' },
-	{ path: '/lte/dashboard', icon: 'bi bi-cpu', title: 'Inicio' },
+	{ path: 'dashboard', icon: 'bi bi-cpu', title: 'Inicio' },
+	{ path: '/lte/dashboard', icon: 'bi bi-cpu', title: 'Inicio Lte' },
 	{ path: '/lte/analytics', icon: 'bi bi-bar-chart', title: 'Analytics' },
 	{ path: '/lte/email', icon: 'bi bi-envelope', title: 'Email',
 		children: [
