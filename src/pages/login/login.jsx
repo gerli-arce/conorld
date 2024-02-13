@@ -31,6 +31,14 @@ function Login() {
     event.preventDefault();
     console.log(loginForm);
     if (loginForm.username === "admin" && loginForm.password === "admin") {
+      if (localStorage) {
+        localStorage.session = JSON.stringify({
+          isAuth: true,
+          user: loginForm,
+          token: "1234567890",
+        });
+      }
+
       setRedirect(true);
     } else {
       const toast1 = document.getElementById("toast-1");
@@ -128,9 +136,7 @@ function Login() {
               data-bs-dismiss="toast"
             ></button>
           </div>
-		  <div className="toast-body">
-			Usuario o contraseña incorrectos
-		  </div>
+          <div className="toast-body">Usuario o contraseña incorrectos</div>
         </div>
       </div>
     </>

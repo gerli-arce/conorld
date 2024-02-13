@@ -4,11 +4,12 @@ import { useApp } from "./hooks/useApp.js";
 import { useSessionLogin } from "./hooks/useSession.js";
 import { useLayoutEffect } from "react";
 import { RoutesApp } from "./routes/RoutesApp.jsx";
+import { Navigate } from "react-router-dom";
 
 function App() {
 
-  const { login, handlerLogin } = useSessionLogin();
   const {
+    session,
     providerValue,
     appHeaderNone,
     appSidebarNone,
@@ -20,6 +21,8 @@ function App() {
     appFooter,
     appTopNav,
   } = useApp();
+
+  
 
   return (
     <AppSettings.Provider value={providerValue}>
@@ -35,6 +38,7 @@ function App() {
           (appTopNav ? "app-with-top-nav " : "")
         }
       >
+        {session.isAuth? (<Navigate to="/dashboard"/>):(<Navigate to="/login"/>) }
         <RoutesApp
           appContentClass={appContentClass}
           appHeaderNone={appHeaderNone}

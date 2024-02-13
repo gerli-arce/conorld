@@ -16,6 +16,14 @@ export const useApp = () => {
     appTopNav: false,
   };
 
+  var initialSession = {
+    isAuth: false,
+    user:{},
+    token: null
+  }
+
+  const [session, setSession] = useState(initialSession);
+
   const [appHeaderNone, setAppHeaderNone] = useState(
     defaultOptions.appHeaderNone
   );
@@ -37,6 +45,15 @@ export const useApp = () => {
   const [appBoxedLayout, setAppBoxedLayout] = useState(
     defaultOptions.appBoxedLayout
   );
+
+  console.log(session);
+
+  var handlerSession = (value) => {
+    if (value) {
+      setSession({ ...session, isAuth: value.isAuth, user: value.user, token: value.token });
+      localStorage.session = JSON.stringify(value);
+    }
+  }
 
   var handleSetAppTheme = (value) => {
     if (value) {
@@ -85,7 +102,10 @@ export const useApp = () => {
   const [appFooter, setAppFooter] = useState(defaultOptions.appFooter);
   const [appTopNav, setAppTopNav] = useState(defaultOptions.appTopNav);
 
+
+
   const providerValue = {
+    setSession,
     setAppHeaderNone,
     setAppSidebarNone,
     setAppSidebarCollapsed,
@@ -108,6 +128,10 @@ export const useApp = () => {
       handleSetAppCover(defaultOptions.appCover);
     }
 
+    if(session.isAuth){
+      handlerSession(session);
+    }
+
     if (localStorage) {
       if (typeof localStorage.appMode !== "undefined") {
         handleSetAppMode(localStorage.appMode);
@@ -118,12 +142,16 @@ export const useApp = () => {
       if (typeof localStorage.appCover !== "undefined") {
         handleSetAppCover(localStorage.appCover);
       }
+      if (typeof localStorage.session !== "undefined") {
+        handlerSession(JSON.parse(localStorage.session));
+      }
     }
 
     // eslint-disable-next-line
   }, []);
 
   return {
+    session,
     providerValue,
     appHeaderNone,
     appSidebarNone,
